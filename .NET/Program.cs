@@ -1,54 +1,38 @@
-﻿
-namespace teste;
+﻿using System.Collections;
+
+namespace Calculadora;
 
 public class Program
 {
-    static void Main()
+    public static void Main()
     {
-        //comentando para teste
-        Console.WriteLine("to testando meo");
+        do{
+        Console.WriteLine("----------Calculadora----------");//title
+
+        float number1, number2, result;//variables for the operations
+        char operation, menu;
+
+        Console.WriteLine("\nEscolha a ação a ser exxecutada:\n a) Sair\n b) Menu de operações\n c) Descriçãode operadores");
+        menu = Console.ReadKey().KeyChar; //Read a single character from user input
+        switch (menu) //use switch to handle the menu options
+                {
+
+                        case 'a'://for char type us single quotes
+                                Console.WriteLine("Você escolheu sair, até mais!");//finish the program
+                                break;
 
 
-        //testando declarações de variáveis
-        string teste = "Hello World!";
-        Console.WriteLine(teste);
-        int number = 18;
-        Console.WriteLine(number);
-        float number2 = 18.5f;
-        Console.WriteLine(number2);
-        bool isTrue = true;
-
-        //solicita um valor inteiro ao usuário
-        Console.WriteLine("digite um núemro inteiro: ");
-        number = Convert.ToInt32(Console.ReadLine());
-        
-        //testando conceitos de laço de repetição, incremento e decremento de váriaveis e uso de condicionais com booleanos
-        do
-        {
-            if (number == 18)
-            {
-                isTrue = true;
-                Console.WriteLine("\no número é igual 18, logo: " + isTrue);
-                number++;
-            }
-            else if (number > 18)
-            {
-                isTrue = false;
-                Console.WriteLine("\nO número é maior que 18 logo: " + isTrue);
-                number -= 2;
-
-            }
-            else
-            {
-                isTrue = false;
-                Console.WriteLine("\nO número é menor que 18 logo: " + isTrue);
-                number += 5;
-
-            }
-        } while (number < 20);
+                        case 'b':
+                                Console.WriteLine("\nWright the first number of the operation:");
+                                number1 = Convert.ToSingle(Console.ReadLine());
 
 
+                                Console.WriteLine("\nWright the second number of the operation:");
+                                number2 = Convert.ToSingle(Console.ReadLine());
 
 
+                                break;
+                }
+        }while(menu != 'a');
     }
-}
+ }
